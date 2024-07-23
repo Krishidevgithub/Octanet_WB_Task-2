@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Playfair Display", serif;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(green 50%, yellow 50%);
+}
+
+.planner {
+    margin: auto;
+    padding: 50px;
+    font-size: 40px;
+    color: rgb(246, 243, 243);
+    text-align: right;
+}
+
+.black{
+    color: #111111;
+}
+.app {
+    width: min(95vw, 32em);
+    margin-top: 4em;
+    margin-left: 4em;
+    position: absolute;
+}
+
+.container {
+    padding: 2em 3em;
+    background-color: white;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.429);
+    border-radius: 10px;
+}
+
+#tasks {
+    margin-top: 1em;
+    width: 100%;
+    position: relative;
+    padding: 1em 1em;
+    border-radius: 1em;
+}
+
+.task {
+    background-color: #ffffff;
+    padding: 1em 1em;
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr;
+    align-items: centre;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0.5em 1em black;
+}
+
+.task:not(first-child) {
+    margin-top: 1em;
+
+}
+
+.task input[type="checkbox"] {
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 40%;
+    border: 2px solid yellow;
+}
+
+.task input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    transform: translate(-40%, -40%);
+    top: 40%;
+    left: 40%;
+}
+
+.task input[type="checkbox"]:checked {
+    background-color: rgb(227, 227, 69);
+    border-color: rgb(227, 227, 69); ;
+}
+
+.task input[type="checkbox"]:checked:before {
+    position: absolute;
+    content: "\f00c";
+    color: green;
+    font-size: .8em;
+    font-family: "Playfair Display", serif;
+    font-weight: 870;
+
+}
+
+.task span {
+    font: .9em;
+    font-weight: 400;
+    word-break: break-all;
+}
+
+.task button {
+    color: #ffffff;
+    width: 100%;
+    padding: 1em 0;
+    border-radius: .5em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.edit {
+    background-color:  rgba(227, 227, 69, 0.854); ;
+};
+
+
+
+.delete {
+    background-color: rgb(237, 30, 30);
+}
+
+#pending-tasks span {
+    color:  rgb(227, 227, 69); ;
+};
+
+
+.completed {
+    text-decoration: line-through;
+    color: green;
+}
+
+
+#tab {
+    position: relative;
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1em;
+}
+
+#tab input {
+    width: 100%;
+    background-color: transparent;
+    color: #111111;
+    border: none;
+    border-bottom: 2px solid green;
+    font-size: 1em;
+    padding: 1em 1em;
+}
+
+#tab input:focus {
+    outline: none;
+    border-color:  rgb(227, 227, 69); ;
+};
+
+
+#tab button {
+    position: relative;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color:  rgb(227, 227, 69); ;
+
+    color: black;
+};
+
+
+#error {
+    background-color: white;
+    padding: 1em 1em;
+    color: rgb(236, 32, 32);
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 1.5em;
+    display: none;
+}
